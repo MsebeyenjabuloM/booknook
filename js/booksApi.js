@@ -1,6 +1,6 @@
 // js/booksApi.js
 
-const GOOGLE_BOOKS_URL = "https://www.googleapis.com/books/v1/volumes?q=";
+const GOOGLE_BOOKS_URL = "https://www.googleapis.com/books/v1/volumes?q=intitle:";
 
 export async function searchBooks(query) {
   try {

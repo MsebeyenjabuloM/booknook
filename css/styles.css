@@ -105,8 +105,6 @@ main {
   color: var(--white);
   font-size: 3rem;
   text-align: center;
-
-  /* optional but looks 🔥 */
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
@@ -122,7 +120,7 @@ main {
 .search-section input {
   padding: 0.8rem 1rem;
   width: 260px;
-  border-radius: 30px; /* 👈 more rounded */
+  border-radius: 30px; 
   border: 1px solid var(--black);
 }
 
@@ -133,6 +131,20 @@ main {
   border-radius: 30px;
   cursor: pointer;
   margin-left: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.search-section button:hover {
+  background-color: #c5aef7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(50, 50, 50, 0.15);
+}
+
+/* Click effect */
+.search-section button:active {
+  transform: translateY(1px);
+  box-shadow: none;
 }
 
 /* RESULTS GRID */
