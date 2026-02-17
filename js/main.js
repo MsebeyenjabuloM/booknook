@@ -1,4 +1,4 @@
-import { searchBooks, getBookById } from "./booksApi.js";
+import { searchBooks } from "./booksApi.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -59,38 +59,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-async function loadBookDetails(id) {
-  const book = await getBookById(id);
-  if (!book) return;
-
-  const section = document.querySelector(".book-detail");
-  if (!section) return;
-
-  const info = book.volumeInfo;
-
-  const title = info.title || "No title";
-  const authors = info.authors?.join(", ") || "Unknown author";
-  const cover = info.imageLinks?.thumbnail || "";
-  const description = info.description || "No description available.";
-  const categories = info.categories?.join(", ") || "Uncategorized";
-
-  section.innerHTML = `
-    <div class="book-detail-container">
-      ${cover ? `<img src="${cover}" alt="${title} cover">` : ""}
-      <div class="book-info">
-        <h2>${title}</h2>
-        <p><strong>Author:</strong> ${authors}</p>
-        <p><strong>Category:</strong> ${categories}</p>
-        <p class="description">${description}</p>
-
-        <div class="status-buttons">
-          <button class="add-btn">Want to Read</button>
-          <button class="add-btn">Currently Reading</button>
-          <button class="add-btn">Finished</button>
-          <button class="add-btn">Did Not Finish</button>
-          <button class="add-btn">Favorite</button>
-        </div>
-      </div>
-    </div>
-  `;
-}
