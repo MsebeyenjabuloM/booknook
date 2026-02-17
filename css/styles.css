@@ -246,6 +246,57 @@ main {
 
 
 
+
+/* LIBRARY ICON */
+.library-icon {
+  display: block;
+  margin-right: Auto;
+  height: 300px; 
+  padding: 3rem 1rem 3rem
+}
+
+/* LIBRARY CATEGORY */
+.library-category {
+  margin-bottom: 3rem; 
+  padding: 0 1rem;
+}
+
+/* Category title */
+.library-category h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+/* Line separator */
+.library-category h2::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: var(--lilac);
+  width: 400px; 
+  margin-top: 0.5rem;
+}
+
+/* Adjust results grid for library page */
+.library-category .results-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+
+/* bigger book cards */
+.library-category .book-card {
+  padding: 1rem;
+}
+
+
+
+
+
+
+
 /* FOOTER */
 .site-footer {
   background-color: var(--lilac);
