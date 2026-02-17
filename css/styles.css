@@ -202,6 +202,50 @@ main {
 }
 
 
+/*BOOK DETAIL PAGE*/
+
+.book-detail {
+  padding: 3rem 2rem;
+}
+
+.book-detail-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 900px;
+  margin: auto;
+  align-items: flex-start;
+}
+
+.book-detail img {
+  width: 300px;
+  border-radius: 12px;
+}
+
+.book-info h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.book-info p {
+  margin-bottom: 0.8rem;
+}
+
+.description {
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.status-buttons {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+
+
+
+
 /* FOOTER */
 .site-footer {
   background-color: var(--lilac);

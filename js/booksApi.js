@@ -12,3 +12,16 @@ export async function searchBooks(query) {
     return [];
   }
 }
+
+export async function getBookById(id) {
+  try {
+    const response = await fetch(
+      `https://www.googleapis.com/books/v1/volumes/${id}`
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching book:", error);
+    return null;
+  }
+}
