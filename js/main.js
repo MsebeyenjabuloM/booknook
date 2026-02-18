@@ -33,7 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const title = info.title || "No title";
       const authors = info.authors?.join(", ") || "Unknown author";
-      const cover = info.imageLinks?.thumbnail || "";
+      let cover = info.imageLinks?.thumbnail || "";
+
+      if (cover.startsWith("http://")) {
+        cover = cover.replace("http://", "https://");
+      }
 
       const card = document.createElement("div");
       card.classList.add("book-card");
