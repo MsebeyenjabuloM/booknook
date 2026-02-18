@@ -21,7 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
         ${book.cover ? `<img src="${book.cover}" alt="${book.title} cover">` : ""}
         <h3>${book.title}</h3>
         <p>${book.authors}</p>
-        <button class="add-btn view-btn">View</button>
+        <div class="card-buttons">
+          <button class="add-btn view-btn">View</button>
+          <button class="remove-btn">Remove</button>
+        </div>
       `;
 
       container.appendChild(card);
@@ -30,6 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
       const viewButton = card.querySelector(".view-btn");
       viewButton.addEventListener("click", () => {
         window.location.href = `book.html?id=${book.id}`;
+      });
+
+      // Remove button functionality
+      const removeButton = card.querySelector(".remove-btn");
+      removeButton.addEventListener("click", () => {
+        // Remove from localStorage
+        library[category] = library[category].filter(b => b.id !== book.id);
+        localStorage.setItem("myLibrary", JSON.stringify(library));
+
+        // Remove from DOM
+        card.remove();
       });
     });
   });

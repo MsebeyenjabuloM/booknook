@@ -2,9 +2,11 @@
 
 const GOOGLE_BOOKS_URL = "https://www.googleapis.com/books/v1/volumes?q=intitle:";
 
-export async function searchBooks(query) {
+export async function searchBooks(query, maxResults = 10, lang = "en") {
   try {
-    const response = await fetch(`${GOOGLE_BOOKS_URL}${query}`);
+    const response = await fetch(
+      `${GOOGLE_BOOKS_URL}${encodeURIComponent(query)}&printType=books&langRestrict=${lang}&maxResults=${maxResults}`
+    );
     const data = await response.json();
     return data.items || [];
   } catch (error) {
