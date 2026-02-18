@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     </div>
   `;
 
-  // ---- Add click events to status buttons ----
+  // Add click events to status buttons
   const buttons = section.querySelectorAll(".add-btn");
 
   buttons.forEach(button => {
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 });
 
-// ---- Save book to localStorage function ----
+// Save book to localStorage function
 function saveBookToLibrary(bookData, status) {
 
   // Try to read library from localStorage

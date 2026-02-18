@@ -1,4 +1,3 @@
-// js/library.js
 
 document.addEventListener("DOMContentLoaded", () => {
   const library = JSON.parse(localStorage.getItem("myLibrary"));

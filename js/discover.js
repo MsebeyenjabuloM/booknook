@@ -1,4 +1,4 @@
-// js/discover.js
+
 import { searchBooks } from "./booksApi.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
