@@ -109,6 +109,23 @@ main {
 }
 
 
+/* QUOTE API STYLING*/
+.quote-section {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-style: italic;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.quote-author {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
 
 
 /* SEARCH */
@@ -146,6 +163,22 @@ main {
   transform: translateY(1px);
   box-shadow: none;
 }
+
+.discover-link {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.discover-link a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.discover-link a:hover {
+  text-decoration: underline;
+}
+
 
 /* RESULTS GRID */
 .results-section {

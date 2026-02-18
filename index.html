@@ -27,17 +27,31 @@
   <h1>Your Digital Book Journal</h1>
 </section>
 
+<section class="quote-section" id="quoteSection">
+  <!-- Quote will load here -->
+</section>
+
 
   <!-- Main Content -->
   <main>
     <section class="search-section">
       <input type="text" placeholder="Search by title or author..." />
       <button>Search</button>
+      <p class="discover-link">
+    Not sure what to read? Explore the 
+    <a href="discover.html">Discovery Page</a>.
+  </p>
     </section>
 
     <section class="results-section">
       <!-- Search results later -->
     </section>
+
+    <section class="library-category" id="homeCurrentlyReading">
+      <h2>Currently Reading</h2>
+      <div class="results-section" id="currentlyReadingPreview"></div>
+    </section>
+
   </main>
 
   <!-- Footer -->
@@ -45,6 +59,7 @@
     <p>© 2026 BookNook</p>
   </footer>
 
+  <script type="module" src="js/quote.js"></script>
   <script type="module" src="js/main.js"></script>
 </body>
 </html>

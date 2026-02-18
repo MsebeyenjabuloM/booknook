@@ -2,7 +2,6 @@ import { searchBooks } from "./booksApi.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  // 🔎 Check if we're on book.html
   const params = new URLSearchParams(window.location.search);
   const bookId = params.get("id");
 
@@ -56,6 +55,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
   }
+
+  // Show Currently Reading on Home
+const library = JSON.parse(localStorage.getItem("myLibrary"));
+
+const currentlyReadingSection = document.getElementById("homeCurrentlyReading");
+const previewContainer = document.getElementById("currentlyReadingPreview");
+
+if (library && library.currentlyReading.length > 0) {
+
+  library.currentlyReading.forEach(book => {
+    const card = document.createElement("div");
+    card.classList.add("book-card");
+
+    card.innerHTML = `
+      ${book.cover ? `<img src="${book.cover}" alt="${book.title} cover">` : ""}
+      <h3>${book.title}</h3>
+      <p>${book.authors}</p>
+      <button class="add-btn">View</button>
+    `;
+
+    previewContainer.appendChild(card);
+
+    const viewButton = card.querySelector(".add-btn");
+    viewButton.addEventListener("click", () => {
+      window.location.href = `book.html?id=${book.id}`;
+    });
+  });
+
+} else {
+  // Hide section completely if empty
+  currentlyReadingSection.style.display = "none";
+}
+
 
 });
 
